@@ -12,6 +12,18 @@
 
 #include <unistd.h>
 
+/*
+    ft_putstr_non_printable - Imprime uma string na tela.
+        Substitui os caracteres não imprimíveis por sua forma hexadecimal seguida por '\'.
+    Parâmetros:
+        str → string a ser mostrada
+    Comportamento:
+        - Caractere imprimível → exibido normalmente
+        - Caractere não imprimível (ASCII < 32 ou == 127) → exibido como '\xy', onde xy é o valor hexadecimal
+    Exemplo:
+        Entrada: "Ola\nesta"
+        Saída:   Ola\0aesta
+*/
 void    ft_putstr_non_printable(char *str)
 {
     int     i;
