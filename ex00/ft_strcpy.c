@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jucongol <jucongol@student.42.fr>          #+#  +:+       +#+        */
+/*   By: jcongolo <jcongolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-07-14 16:59:47 by jucongol          #+#    #+#             */
-/*   Updated: 2025-07-14 16:59:47 by jucongol         ###   ########.fr       */
+/*   Created: 2025/07/14 16:59:47 by jucongol          #+#    #+#             */
+/*   Updated: 2025/07/16 13:01:15 by jcongolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
     Retorna: ponteiro original de 'dest'
 */
+#include <stddef.h>//Header do valor NULL se vaz a usar
+
 char    *ft_strcpy(char *dest, char *src)
 {
     int i;
@@ -44,11 +46,20 @@ char    *ft_strcpy(char *dest, char *src)
     #include <unistd.h>
     int main(void)
     {
-        char    dst [10];
         char    *src = "Hola mundo";
-        ft_strcpy(dst, src);
+        char    dst [10];
+        int     i = 0;
+        write(1, "dst antes:-> ", 14);
+        while(dst[i])
+        {
+            write(1, &dst[i], 1);
+            i++;
+        }
+        write(1, "\n", 1);
         
-        int i = 0;
+        ft_strcpy(dst, src);
+        write(1, "dst depois:-> ", 15);
+        i = 0;
         while(dst[i])
         {
             write(1, &dst[i], 1);

@@ -3,27 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jucongol <jucongol@student.42.fr>          #+#  +:+       +#+        */
+/*   By: jcongolo <jcongolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-07-15 18:08:07 by jucongol          #+#    #+#             */
-/*   Updated: 2025-07-15 18:08:07 by jucongol         ###   ########.fr       */
+/*   Created: 2025/07/15 18:08:07 by jucongol          #+#    #+#             */
+/*   Updated: 2025/07/16 13:11:09 by jcongolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 /*
-    ft_putstr_non_printable - Imprime uma string na tela.
-        Substitui os caracteres não imprimíveis por sua forma hexadecimal seguida por '\'.
-    Parâmetros:
-        str → string a ser mostrada
-    Comportamento:
-        - Caractere imprimível → exibido normalmente
-        - Caractere não imprimível (ASCII < 32 ou == 127) → exibido como '\xy', onde xy é o valor hexadecimal
-    Exemplo:
-        Entrada: "Ola\nesta"
-        Saída:   Ola\0aesta
+ft_putstr_non_printable - Imprime uma string na tela.
+Substitui os caracteres não imprimíveis por sua forma hexadecimal seguida por '\'.
+Parâmetros:
+str → string a ser mostrada
+Comportamento:
+- Caractere imprimível → exibido normalmente
+- Caractere não imprimível (ASCII < 32 ou == 127) → exibido como '\xy', onde xy é o valor hexadecimal
+Exemplo:
+Entrada: "Ola\nesta"
+Saída:   Ola\0aesta
 */
+#include <unistd.h>
 void    ft_putstr_non_printable(char *str)
 {
     int     i;
@@ -38,7 +37,7 @@ void    ft_putstr_non_printable(char *str)
         //Verifica se aractere não é imprimível:
         //- ASCII de 0 a 31 são de controle
         //- ASCII 127 é o DEL (delete), também não é imprimível
-        if(str[i] >= 0 && str[i] <= 31 || str[i] == 127)
+        if((str[i] >= 0 && str[i] <= 31) || str[i] == 127)
         {
             write(1, "\\", 1);//Escreve caractere de escape '\'
             //Converte valor do caractere para 2 dígitos hexadecimais:
