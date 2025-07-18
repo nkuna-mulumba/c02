@@ -37,7 +37,7 @@ void    ft_putstr_non_printable(char *str)
         //Verifica se aractere não é imprimível:
         //- ASCII de 0 a 31 são de controle
         //- ASCII 127 é o DEL (delete), também não é imprimível
-        if((str[i] >= 0 && str[i] <= 31) || str[i] == 127)
+        if(((unsigned char)str[i] >= 0 && (unsigned char)str[i] <= 31) || (unsigned char)str[i] == 127)
         {
             write(1, "\\", 1);//Escreve caractere de escape '\'
             //Converte valor do caractere para 2 dígitos hexadecimais:
@@ -71,4 +71,3 @@ void    ft_putstr_non_printable(char *str)
         
         return(0);
     }
-*/

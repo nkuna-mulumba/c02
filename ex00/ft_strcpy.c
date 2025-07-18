@@ -23,12 +23,6 @@ char    *ft_strcpy(char *dest, char *src)
 {
     int i;
 
-    // Verifica se os ponteiros são válidos
-    if(!dest || !src)
-    {
-        return(NULL);
-    }
-
     i = 0;
     // Copia cada caractere de 'src' para 'dest'
     while(src[i])
