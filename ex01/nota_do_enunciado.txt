@@ -1,0 +1,64 @@
+🎯 Objetivo breve do enunciado_
+    - A função ft_strncpy tem como propósito:
+    - Copiar até "n" caracteres da string "src" para "dest".
+    - Garantir que dest fique corretamente terminada com '\0' caso src seja menor que n.
+    - Não ultrapassar o limite n, evitando acessos indevidos à memória.
+    - Treinar manipulação de arrays de caracteres, limites e preenchimento manual.
+
+✅ Pontos positivos da tua implementação:
+    - Segue exatamente o comportamento da função original strncpy da libc.
+    - Evita buffer overflow, pois nunca copia mais que n caracteres.
+    - Preenche o restante com '\0', garantindo previsibilidade.
+    - Código limpo e fácil de ler, ideal para iniciantes.
+    - Não usa funções externas, reforçando lógica manual.
+
+⚠️ Pontos negativos (ou limitações naturais da função):
+    - Esses pontos não são erros teus — são características da própria strncpy:
+    - Não garante que dest seja terminada com '\0' se src tiver tamanho ≥ n.  
+    - Isso é comportamento padrão da função original.
+    - Pode deixar lixo no final de dest se n for menor que o tamanho de src.
+    - Não impede sobreposição de memória (dest e src sobrepostos) — comportamento indefinido.
+    - Não verifica se dest tem espaço suficiente — responsabilidade do programador.
+
+🧩 Quando aplicar este tipo de mecanismo
+    - ft_strncpy é útil quando:
+    - Queres copiar apenas parte de uma string.
+    - Precisas preencher um buffer fixo, como:
+            nomes de ficheiros
+            campos de estruturas
+            buffers de rede
+            strings em protocolos binários
+    - Estás a trabalhar com strings de tamanho limitado, como em sistemas embarcados.
+    - Queres evitar overflow ao copiar strings desconhecidas.
+    - É uma função muito usada em contextos onde segurança e limites são essenciais.
+
+📝 Enunciados práticos para reforçar o entendimento:
+    🧠 1. ft_copy_first(char *dest, char *src, unsigned int n)
+        Objetivo: copiar apenas os primeiros n caracteres da string src para dest.
+        Exemplo: "programmer", n = 5 → "progr"  
+        Trabalha com: limites de cópia e leitura parcial da string.
+        Reforça: controle de índices e noção de truncamento (corte da string).
+
+    🧠 2. ft_copy_fill(char *dest, char *src, unsigned int n)
+        Objetivo: copiar uma string curta para um buffer maior, preenchendo o restante com '\0'.
+        Exemplo: "ola", n = 10 → "ola\0\0\0\0\0\0\0"  
+        Trabalha com: buffers fixos e preenchimento manual.
+        Reforça: importância do terminador nulo e segurança na memória.
+
+    🧠 3. ft_copy_exact(char *dest, char *src, unsigned int n)
+        Objetivo: testar o caso onde o tamanho de src é exatamente igual a n.
+        Exemplo: "12345", n = 5 → "12345" (sem '\0' no final)
+        Trabalha com: comportamento real da função strncpy.
+        Reforça: atenção ao terminador nulo quando o limite é atingido.
+
+    🧠 4. ft_copy_half(char *dest, char *src)
+        Objetivo: copiar apenas a metade inicial da string original.
+        Exemplo: "abcdef" → "abc"  
+        Trabalha com: cálculo de tamanho usando strlen.
+        Reforça: integração entre funções e lógica simples de divisão.
+
+    🧠 5. ft_copy_until_space(char *dest, char *src, unsigned int n)
+        Objetivo: copiar caracteres até encontrar um espaço ou até atingir n.
+        Exemplo: "ola mundo", n = 10 → "ola"  
+        Trabalha com: leitura sequencial e detecção de delimitadores.
+        Reforça: extração de palavras e uso de limites.
