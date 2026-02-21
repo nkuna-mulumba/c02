@@ -1,0 +1,52 @@
+🎯 Breve objetivo do enunciado
+    Reproduzir o comportamento da função padrão strcpy, sem usar nenhuma função da biblioteca padrão. O objetivo é entender como funciona a cópia de strings caractere a caractere, manipulando ponteiros e terminadores nulos manualmente.
+
+✅ Pontos positivos
+    -     Didático e direto: ensina como strings são armazenadas e manipuladas em C.
+    - Sem funções externas: força o aluno a entender a lógica interna da cópia.
+    - Exercita ponteiros e arrays: base fundamental para qualquer projeto em C.
+    - Introduz terminador nulo ('\0'): essencial para strings válidas.
+    - Reutilizável: função pode ser usada em projetos maiores como parte de uma biblioteca pessoal.
+
+⚠️ Pontos negativos
+    - Não trata erros ou limites: não verifica se dest tem espaço suficiente.
+    - Não lida com ponteiros nulos (NULL): pode causar crash se src ou dest forem inválidos.
+    - Não é segura para buffers: não previne overflow (diferente de strncpy).
+    - Não mostra alternativas modernas: como memcpy, strlcpy, etc.
+    - Pode parecer trivial para quem já conhece strcpy, mas é essencial para consolidar fundamentos.
+
+🛠️ Quando aplicar esse tipo de mecanismo
+    - Ao construir funções básicas de manipulação de strings em bibliotecas pessoais.
+    - Em ambientes sem acesso à biblioteca padrão (exercícios da 42, sistemas embarcados).
+    - Para entender como funciona internamente uma função como strcpy.
+    - Em projetos que exigem controle total sobre alocação e cópia de dados.
+    - Ao implementar testes unitários ou simulações de comportamento de funções padrão.
+
+📘Enunciados práticos para reforçar esse mecanismo
+    🧠 1. ft_strreverse(char *str)
+    Objetivo: inverter a string original in-place.
+    Exemplo: "hello" → "olleh"
+    Trabalha com ponteiros, troca de caracteres e controle de índices.
+    Reforça lógica de manipulação direta sem criar cópias.
+
+    🧠 2. ft_strcompress(char *str)
+    Objetivo: remover espaços duplicados e compactar a string.
+    Exemplo: "a b c" → "a b c"
+    Exige controle de escrita e leitura no mesmo buffer.
+    Treina lógica de filtragem e sobrescrita.
+
+    🧠 3. ft_strstrip(char *str)
+    Objetivo: remover espaços em branco no início e fim da string.
+    Exemplo: " hello " → "hello"
+    Trabalha com deslocamento de ponteiros e realocação.
+    Reforça entendimento de limites e terminadores.
+
+    🧠 4. ft_strcount(char *str, char c)
+    Objetivo: contar quantas vezes o caractere c aparece na string.
+    Exemplo: "banana", 'a' → 3
+    Simples, mas útil para reforçar leitura sequencial e comparação.
+
+    🧠 5. ft_strreplace(char *str, char find, char replace)
+    Objetivo: substituir todas as ocorrências de um caractere por outro.
+    Exemplo: "banana", 'a', 'x' → "bxnxnx"
+    Treina substituição direta e manipulação segura.
