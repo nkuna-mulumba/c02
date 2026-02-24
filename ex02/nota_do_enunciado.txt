@@ -1,0 +1,62 @@
+🎯 Objetivo breve do enunciado:
+    - Criar uma função que verifica se uma string contém apenas caracteres  
+        alfabéticos (A–Z e a–z).
+    - Se a string estiver vazia, deve ser considerada válida.
+    - Se houver qualquer caractere que não seja letra, retorna 0.
+    - É uma função clássica de validação de entrada.
+
+
+✅ Pontos positivos da implementação:
+    - Clara e fácil de seguir — a lógica está bem organizada.
+    - Cobre letras maiúsculas e minúsculas.
+    - Trata corretamente a string vazia, como o enunciado exige.
+    - Retorna cedo quando encontra erro, o que melhora a eficiência.
+    - Não usa funções externas, apenas comparações diretas.
+    - Percorre a string apenas uma vez, o que é ótimo.
+
+
+⚠️ Pontos negativos (ou melhorias possíveis):
+    1. Código repetido
+        Os dois blocos if para maiúsculas e minúsculas são quase iguais.
+        Poderias unificar:
+        if (!((str[i] >= 'a' && str[i] <= 'z') ||
+            (str[i] >= 'A' && str[i] <= 'Z')))
+            return 0;
+
+    2. Não trata str == NULL:
+        O enunciado diz que não precisa, então não é erro — apenas uma limitação conhecida.
+
+    3. Poderia ser mais compacto:
+        Mas isso é estilo, não problema.
+
+
+🧠 Quando aplicar este tipo de mecanismo:
+    Este tipo de função é útil sempre que precisas validar texto antes de o processar.
+    Exemplos:
+        - Verificar se um nome contém apenas letras.
+        - Validar campos de formulários (nome, cidade, país).
+        - Garantir que uma palavra não contém números ou símbolos.
+        - Pré‑processar dados antes de armazenar ou comparar.
+        - Filtrar strings antes de aplicar outras funções (ex.: conversão, hashing, ordenação).
+    É um padrão clássico de validação de caracteres.
+
+📝 Enunciados para praticar (reforço do mesmo conceito):
+    1. ft_str_is_numeric
+        Cria uma função que retorna 1 se a string contiver apenas dígitos (0–9).
+        Retorna 0 se houver qualquer outro caractere.
+
+    2. ft_str_is_lowercase
+        Retorna 1 se a string contiver apenas letras minúsculas (a–z).
+        Retorna 0 caso contrário.
+
+    3. ft_str_is_uppercase
+        Retorna 1 se a string contiver apenas letras maiúsculas (A–Z).
+        Retorna 0 caso contrário.
+
+    4. ft_str_is_alnum
+        Retorna 1 se a string contiver apenas letras ou números.
+        Retorna 0 se tiver símbolos, espaços ou pontuação.
+
+    5. ft_str_is_printable
+        Retorna 1 se todos os caracteres estiverem no intervalo ASCII imprimível (32 a 126).
+        Retorna 0 se encontrar caracteres de controlo.
