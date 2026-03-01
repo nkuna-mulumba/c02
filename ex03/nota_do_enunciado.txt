@@ -1,0 +1,70 @@
+🎯 Objetivo do exercício
+    O exercício treina três competências fundamentais da programação em C:
+    - Percorrer strings usando índices e o terminador '\0'.
+    - Validar caracteres através de intervalos ASCII ('0' a '9').
+    - Construir funções booleanas (retornam 1 ou 0) com lógica simples e eficiente.
+    - Além disso, reforça o tratamento de casos especiais, como a string vazia, e prepara terreno para funções mais avançadas como ft_atoi, parsers e validação de input.
+
+⭐ Pontos positivos da tua implementação:
+    - Clara e fácil de ler — a lógica está direta e sem ruído.
+    - Cumpre exatamente o enunciado — trata a string vazia como válida e valida cada caractere.
+    - Comentários bem escritos — explicam o que fazes e porquê.
+    - Estrutura correta do loop — percorres a string até ao '\0'.
+    - Sem operações desnecessárias — o código é eficiente e minimalista.
+    - Boa separação de casos especiais — verificas a string vazia antes do loop.
+
+⚠️ Pontos negativos (ou melhor, pontos a melhorar):
+    Nada grave, mas vale considerar:
+    - Não verificas ponteiro NULL ;
+    - Se alguém fizer ft_str_is_numeric(NULL), o programa crasha.
+    - O if interno pode ser simplificado. Em vez de:
+        if (str[i] >= '0' && str[i] <= '9')
+            i++;
+        else
+            return 0;
+
+    podes inverter a lógica:
+    if (str[i] < '0' || str[i] > '9')
+        return 0;
+    i++;
+    Fica mais limpo e mais fácil de ler.
+
+    Poderias usar uma função auxiliar ft_is_digit
+
+🧩 Quando implementar este tipo de mecanismo:
+    Funções como esta são úteis quando precisas de:
+    - Validar input do utilizador;
+    - Garantir que uma string contém apenas números;
+    - Preparar dados para conversão (atoi, strtol, etc.);
+    - Sanitizar dados antes de processar;
+    - Validar ficheiros de configuração;
+    - Criar uma biblioteca de utilidades (libft);
+    - Evitar erros antes de fazer operações matemáticas;
+    
+    São muito usadas em:
+    - Parsers;
+    - Leitura de ficheiros;
+    - Validação de formulários;
+    - Sistemas que não podem confiar no input
+
+📝 Enunciados para praticar e reforçar o conceito:
+  
+1. ft_str_is_alpha
+    Cria uma função que retorna 1 se a string contiver apenas letras (A–Z, a–z).
+    Retorna 0 se houver qualquer caractere que não seja uma letra.
+
+2. ft_str_is_lowercase
+    Cria uma função que retorna 1 se a string contiver apenas letras minúsculas (a–z).
+    Retorna 0 se houver qualquer caractere fora desse intervalo.
+
+3. ft_str_is_uppercase
+    Cria uma função que retorna 1 se a string contiver apenas letras maiúsculas (A–Z).
+    Retorna 0 se houver qualquer caractere fora desse intervalo.
+
+4. ft_str_is_alnum
+    Cria uma função que retorna 1 se a string contiver apenas letras ou dígitos.
+    Retorna 0 se houver qualquer caractere que não seja alfanumérico.
+
+5. ft_str_is_hex
+    Cria uma função que retorna 1 se a string contiver apenas caracteres hexadecimais (0–9, A–F, a–f).
+    Retorna 0 se houver qualquer caractere fora do conjunto hexadecimal.
