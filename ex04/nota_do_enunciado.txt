@@ -1,0 +1,45 @@
+Objetivo do exercício:
+    O objetivo é treinar a capacidade de:
+    - Percorrer uma string caractere a caractere;
+    - Validar se cada caractere pertence a um intervalo específico ('a'–'z');
+    - Retornar 1 apenas quando todos os caracteres cumprem a regra;
+    - Retornar 1 também quando a string é vazia (regra típica da 42);
+    - Retornar 0 ao primeiro caractere inválido.
+    - Este tipo de exercício reforça a lógica de loops, condições e manipulação de strings em C.
+
+Pontos positivos da tua implementação:
+    - Clareza: o código é fácil de ler e segue uma estrutura lógica simples.
+    - Coerência: segue o mesmo estilo das tuas outras funções (ft_str_is_alpha, etc.).
+    - Eficiência: retorna imediatamente ao encontrar um caractere inválido.
+    - Correto segundo o enunciado: string vazia retorna 1.
+    - Sem funções auxiliares desnecessárias: usa comparação direta, o que é aceitável neste exercício.
+
+Pontos negativos (ou pontos a melhorar):
+    - Não verifica ponteiro NULL: o enunciado não exige, mas poderia evitar crash se alguém passar NULL.
+    - Não usa funções auxiliares: não é negativo, mas se quiseres manter consistência com o teu estilo (como fizeste em ft_str_is_alpha), poderias criar ft_is_char_lower.
+
+Quando implementar este tipo de mecanismo:
+    Este padrão é útil quando:
+    - Precisas validar strings segundo regras simples (alfanumérico, hexadecimal, printable, etc.);
+    - Queres garantir que todos os caracteres pertencem a um conjunto específico;
+    - Estás a construir funções de validação para input do utilizador;
+    - Estás a criar uma biblioteca de utilidades (libft) com funções de verificação;
+    - Precisas de lógica rápida e eficiente sem recorrer a bibliotecas externas.
+    - É um padrão muito comum em C, especialmente em ambientes onde não podes usar ctype.h.
+
+Enunciados para praticar:
+1. ft_str_is_vowel
+   Cria uma função que retorna 1 se a string contiver apenas vogais (a, e, i, o, u).
+   Retorna 0 se houver qualquer caractere que não seja vogal.
+2. ft_str_is_binary
+   Cria uma função que retorna 1 se a string contiver apenas os caracteres '0' e '1'.
+   Retorna 0 se houver qualquer caractere fora desse conjunto.
+3. ft_str_is_octal
+   Cria uma função que retorna 1 se a string contiver apenas dígitos octais (0–7).
+   Retorna 0 se houver qualquer caractere fora desse intervalo.
+4. ft_str_is_space
+   Cria uma função que retorna 1 se a string contiver apenas espaços (' ').
+   Retorna 0 se houver qualquer caractere diferente de espaço.
+5. ft_str_is_ascii
+   Cria uma função que retorna 1 se a string contiver apenas caracteres ASCII (0–127).
+   Retorna 0 se houver qualquer caractere fora desse intervalo.
