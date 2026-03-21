@@ -1,0 +1,45 @@
+🎯 Objetivo do exercício:
+    - O objetivo deste exercício é treinar a capacidade de:
+    - Percorrer uma string caractere por caractere
+    - Verificar se cada caractere pertence a um intervalo específico ('A' a 'Z')
+    - Retornar 1 se todos forem válidos
+    - Retornar 0 ao primeiro caractere inválido
+    - Tratar corretamente o caso de string vazia
+    - Este tipo de exercício reforça a lógica fundamental de validação de strings em C.
+
+🟢 Pontos positivos do teu código:
+    - Lógica correta: a verificação 'A' <= c <= 'Z' está perfeita.
+    - Retorno imediato: assim que encontra um caractere inválido, retorna 0 — boa prática.
+    - String vazia retorna 1: exatamente como o enunciado pede.
+    - Código limpo e fácil de ler: estrutura clara e direta.
+    - Sem funções externas: cumpre o requisito do exercício.
+
+🔴 Pontos negativos (pequenos detalhes a melhorar):
+    - Falta verificar ponteiro NULL  
+    - O enunciado diz que assume ponteiro válido, mas na prática é sempre bom proteger.
+    
+🧠 Quando implementar este tipo de mecanismo:
+    - Este padrão é usado sempre que precisas validar strings, por exemplo:
+    - Verificar se uma string contém apenas números
+    - Verificar se contém apenas letras
+    - Verificar se contém apenas minúsculas
+    - Verificar se contém apenas caracteres ASCII
+    - Verificar se contém apenas dígitos hexadecimais, binários, octais, etc.
+    - É um padrão essencial em C e aparece muito em:
+    - Libft
+    - Parsers
+    - Sanitização de input
+    - Verificação de formatos
+    - Leitura de ficheiros
+
+📝 5 Exercícios para melhorar a lógica:
+    1. ft_str_is_lowercase
+    Retorna 1 se a string tiver apenas 'a' a 'z'.
+    2. ft_str_is_alpha
+    Retorna 1 se a string tiver apenas letras (maiúsculas ou minúsculas).
+    3. ft_str_is_numeric
+    Retorna 1 se a string tiver apenas dígitos '0' a '9'.
+    4. ft_str_is_printable
+    Retorna 1 se todos os caracteres forem imprimíveis (ASCII 32 a 126).
+    5. ft_str_is_hexadecimal
+    Retorna 1 se todos os caracteres forem válidos em hexadecimal (0–9, A–F, a–f).
