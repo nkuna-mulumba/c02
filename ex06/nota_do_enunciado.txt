@@ -1,0 +1,66 @@
+🎯 Objetivo do exercício:
+    O objetivo é treinar:
+    - Como percorrer uma string caractere a caractere
+    - Como validar cada caractere com base num intervalo ASCII
+    - Como retornar 1 apenas quando todos os caracteres são válidos
+    - Como tratar o caso especial da string vazia
+    - Como implementar verificações simples sem funções externas
+    - Este tipo de exercício reforça a lógica fundamental de validação em C.
+
+🟢 Pontos positivos do teu código:
+    ✔ 1. Lógica correta
+    O intervalo ' ' (ASCII 32) até '~' (ASCII 126) está perfeito para caracteres imprimíveis.
+    ✔ 2. Retorno correto para string vazia
+    O enunciado diz que string vazia deve retornar 1 — e tu implementaste isso corretamente.
+    ✔ 3. Estrutura clara e fácil de ler
+    O código está limpo, direto e segue o mesmo padrão dos exercícios anteriores.
+    ✔ 4. Retorno imediato ao encontrar erro
+    Boa prática:
+    return(0);
+    Assim que encontra um caractere não imprimível.
+    ✔ 5. Sem funções externas
+    Cumpre exatamente o que o enunciado pede.
+
+🔴 Pontos negativos (pequenos detalhes):
+    ❌ 1. Falta verificar ponteiro NULL
+    Mesmo que o enunciado diga que assume ponteiro válido, é sempre boa prática:
+    if (!str) return 0;
+    ❌ 2. Comentários em excesso
+    Alguns comentários explicam coisas óbvias (“avança para próximo caractere”).
+    Comentários devem explicar porquê, não o quê.
+    ❌ 3. Nome da função auxiliar poderia existir
+    Seguindo o teu padrão, poderias ter criado:
+    int ft_is_printable_char(char c)
+    Mas não é obrigatório.
+
+🧠 Quando implementar este tipo de mecanismo:
+    - Este padrão é usado sempre que precisas validar strings:
+    - Verificar se contém apenas números
+    - Verificar se contém apenas letras
+    - Verificar se contém apenas minúsculas/maiúsculas
+    - Verificar se contém apenas caracteres ASCII
+    - Verificar se contém apenas hexadecimais, binários, octais
+    - Sanitização de input
+    - Parsers
+    - Leitura de ficheiros
+    - É um padrão essencial em C e aparece muito em:
+    - Libft
+    - Projetos de parsing
+    - Programas que validam formatos
+    - Ferramentas que processam texto
+
+📝 5 exercícios para melhorar a lógica:
+    1. ft_str_is_graphic
+    Retorna 1 se todos os caracteres forem gráficos (ASCII 33–126).
+
+    2. ft_str_is_ascii
+    Retorna 1 se todos os caracteres forem ASCII (0–127).
+
+    3. ft_str_is_binary
+    Retorna 1 se a string tiver apenas '0' e '1'.
+
+    4. ft_str_is_octal
+    Retorna 1 se a string tiver apenas '0' a '7'.
+
+    5. ft_str_is_alnum
+    Retorna 1 se a string tiver apenas letras ou números.
