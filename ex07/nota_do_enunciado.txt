@@ -1,0 +1,55 @@
+🎯 Objetivo do exercício
+    Converter todas as letras minúsculas de uma string para maiúsculas, modificando a própria string.
+    Ou seja:
+    'a' → 'A'
+    'z' → 'Z'
+    caracteres fora de 'a'–'z' permanecem iguais
+    retorna o ponteiro original
+
+✅ Pontos positivos:
+    - Simples e clara: usa apenas comparação ASCII.
+    - Eficiente: percorre a string uma única vez.
+    - Sem alocação: modifica a string original.
+    - Cálculo correto:
+    - str[i] = str[i] - ('a' - 'A');  
+    - é a forma clássica e correta de converter minúscula → maiúscula.
+    - Compatível com Libft: segue o estilo esperado.
+
+⚠️ Pontos negativos (ou melhorias possíveis):
+    - Não verifica ponteiro NULL  
+    - Se str == NULL, ocorre segmentation fault.
+    - (A Libft normalmente não exige essa verificação, mas é bom saber.)
+    - Só funciona para ASCII puro  
+    - Não converte acentos (á, ç, é) porque são multibyte em UTF‑8.
+    - Comentário pode mencionar explicitamente o motivo da subtração  
+    - Ex.: 'a' - 'A' = 32 → deslocamento ASCII.
+
+🧠 Quando usar este tipo de mecanismo:
+    - Quando queres manipular strings ASCII simples.
+    - Quando precisas converter texto para formato uniforme (ex.: comparar nomes).
+    - Quando queres evitar funções da libc (toupper) por restrição do exercício.
+    - Quando trabalhas com dados garantidamente não UTF‑8 complexo.
+    Não usar quando:
+    - Precisas suportar acentos ou caracteres Unicode.
+    - A string pode ser NULL.
+    - Estás a trabalhar com dados imutáveis (ex.: literais de string).
+
+📝 5 Exercícios para melhorar a lógica e entendimento:
+    1. Implementar ft_strlowcase
+    Converte todas as letras para minúsculas.
+    Mesma lógica, mas invertida.
+
+    2. Implementar ft_strcapitalize
+    Primeira letra de cada palavra em maiúscula, restantes em minúscula.
+    Excelente para treinar condições e estados.
+
+    3. Implementar ft_str_is_uppercase
+    Retorna 1 se todos os caracteres forem 'A'–'Z'.
+
+    4. Implementar ft_str_togglecase
+    Troca maiúsculas ↔ minúsculas.
+    Treina lógica condicional dupla.
+
+    5. Implementar ft_str_to_ascii_range
+    Substitui qualquer caractere fora de ' '–'~' por '?'.
+    Treina validação de intervalos ASCII.

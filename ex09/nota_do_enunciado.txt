@@ -1,0 +1,62 @@
+🎯 Objetivo do exercício:
+    Implementar uma função que transforma uma string para o formato “Capitalized”:
+    primeira letra de cada palavra em maiúscula e o restante em minúscula.
+    Aqui, palavra = sequência de caracteres alfanuméricos.
+    Delimitadores = tudo que não é alfanumérico.
+    👉 Isto treina capitalização, estados e classificação de caracteres.
+
+🟩 Pontos positivos da implementação:
+    Lógica de estado clara usando new_word  
+    → simples, eficiente, fácil de ler.
+    Deteção correta de palavra  
+    → alfanuméricos continuam palavra, símbolos reiniciam.
+    Tratamento separado para minúsculas, maiúsculas e números  
+    → evita erros e mantém consistência.
+    Sem funções auxiliares desnecessárias  
+    → código direto e limpo.
+    Sem acessos inválidos  
+    → não usa i-1 nem i+1 perigosos.
+    Complexidade O(n)  
+    → ideal para strings longas.
+
+🟥 Pontos negativos (pequenos, mas importantes):
+    Repetição de condições ASCII  
+    → poderias usar funções auxiliares (ft_is_alpha, ft_is_numeric).
+    Não força minúsculas antes de capitalizar  
+    → funciona, mas a versão clássica faz:
+    tudo minúsculo
+    depois capitaliza
+    Não trata UTF‑8
+    Comentário poderia ser mais técnico  
+    → mas já está claro.
+
+🟦 Quando implementar este tipo de mecanismo:
+    Usa esta lógica quando precisas de:
+    Formatar nomes próprios  
+    Ex.: “joSE da siLVa” → “Jose Da Silva”
+    Normalizar texto para exibição  
+    Ex.: títulos, cabeçalhos, etiquetas.
+    Preparar dados para banco de dados  
+    Ex.: padronizar nomes antes de inserir.
+    Processamento de linguagem simples  
+    Ex.: tokenização leve.
+    Limpeza de dados  
+    Ex.: padronizar entradas do utilizador.
+
+🟩 5 Exercícios para melhorar a lógica:
+    1) ft_str_to_title_case
+    Transformar a string para formato de título:
+    Palavras pequenas (“de”, “da”, “do”, “a”, “e”, “o”) ficam minúsculas
+    Restantes capitalizam
+    2) ft_str_reverse_words
+    Inverter apenas as palavras, mantendo os delimitadores no mesmo lugar.
+    Ex.: "Joao-da-Silva" → "oaoJ-ad-avliS"
+    3) ft_str_clean_symbols
+    Remover todos os símbolos não alfanuméricos, mas manter espaços.
+    Ex.: "Joao@# Silva!!" → "Joao Silva"
+    4) ft_str_count_words
+    Contar quantas palavras existem na string (alfanuméricas).
+    Ex.: "Joao-123---Silva" → 3
+    5) ft_str_swapcase
+    Trocar maiúsculas ↔ minúsculas.
+    Ex.: "AbC12xY" → "aBc12Xy"

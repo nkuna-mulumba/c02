@@ -1,0 +1,50 @@
+🎯 Objetivo do exercício:
+    Converter todas as letras maiúsculas da string em minúsculas, modificando a string in‑place.
+    Ou seja:
+    'A' → 'a'
+    'Z' → 'z'
+    qualquer outro caractere permanece igual
+    retorna o próprio ponteiro str
+    É um exercício clássico para treinar:
+    intervalos ASCII
+    manipulação de strings
+    aritmética de caracteres
+    loops simples
+
+🟩 Pontos positivos:
+    Uso correto do intervalo ASCII — 'A' a 'Z'
+    Conversão correta usando 'a' - 'A'
+    Loop simples e eficiente
+    Modifica a string diretamente
+    Retorna o ponteiro original, como a Libft faz
+    Código limpo e fácil de ler
+    Sem dependências externas
+
+🟥 Pontos negativos (pequenos detalhes)
+    Não valida ponteiro nulo
+    Se str == NULL, ocorre undefined behavior.
+    Não trata UTF‑8
+    A função só funciona com ASCII puro.
+    Acentos (á, ç, é) não são convertidos.
+    Não usa função auxiliar
+    Não é errado, mas reduz modularidade.
+
+🟦 Quando implementar este tipo de mecanismo:
+    *Este tipo de função é útil quando:
+    Estás a normalizar texto para comparação
+    Precisas garantir que tudo está em minúsculas
+    Estás a implementar uma mini‑biblioteca de manipulação de strings
+    Estás a trabalhar com ASCII puro
+    Queres evitar tolower() por restrições do exercício
+    
+    *Não usar quando:
+    Precisas suportar UTF‑8
+    A string é literal ("ABC") — literais não podem ser modificados
+    O texto contém acentos ou emojis
+
+🧠 5 Exercícios para melhorar a lógica e entendimento:
+    ft_strupcase — converte minúsculas em maiúsculas
+    ft_strtogglecase — troca maiúsculas ↔ minúsculas
+    ft_strcapitalize — primeira letra maiúscula, resto minúscula
+    ft_str_is_lowercase — verifica se todos os caracteres são minúsculos
+    ft_str_to_ascii_range — substitui caracteres fora do intervalo ASCII imprimível

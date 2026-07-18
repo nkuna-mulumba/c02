@@ -7,7 +7,7 @@
     - Como implementar verificações simples sem funções externas
     - Este tipo de exercício reforça a lógica fundamental de validação em C.
 
-🟢 Pontos positivos do teu código:
+🟢 Pontos positivos:
     ✔ 1. Lógica correta
     O intervalo ' ' (ASCII 32) até '~' (ASCII 126) está perfeito para caracteres imprimíveis.
     ✔ 2. Retorno correto para string vazia

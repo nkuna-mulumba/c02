@@ -6,7 +6,7 @@
 /*   By: casa <casa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 15:22:16 by jcongolo          #+#    #+#             */
-/*   Updated: 2026/03/21 21:50:40 by casa             ###   ########.fr       */
+/*   Updated: 2026/03/21 21:53:41 by casa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -294,7 +294,7 @@ int    ft_str_is_hexadecimal(char *str)
     }
     return(1);
 }
-/**/
+/*
     int main(void)
     {
         char *test = "A";
@@ -308,3 +308,4 @@ int    ft_str_is_hexadecimal(char *str)
         }   
         return(0);
     }
+*/
