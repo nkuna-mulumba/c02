@@ -6,7 +6,7 @@
 /*   By: casa <casa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 16:31:54 by jcongolo          #+#    #+#             */
-/*   Updated: 2026/09/06 19:21:42 by casa             ###   ########.fr       */
+/*   Updated: 2026/09/06 20:00:13 by casa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -379,18 +379,19 @@ char    *ft_str_to_title_case(char *str)
     return(str);
 }
 
-/**/
-int main(void)
-{
-    // char str[] = "Juliao de Angola_JULIAO DE ANGOLA:juliao De angola-juliao DE E Angola DO";
-    // char str[] = "Juliao,,,de,,,Angola";
-    char str[] = "juliao de angola";
-    // char str[] = "Juliao   -   de   -   Angola";  
-    printf("Befor: %s.\n", str);   
-    ft_str_to_title_case(str);
-    printf("After: %s.\n", str);
-    return(0);
-}
+/*
+    int main(void)
+    {
+        // char str[] = "Juliao de Angola_JULIAO DE ANGOLA:juliao De angola-juliao DE E Angola DO";
+        // char str[] = "Juliao,,,de,,,Angola";
+        char str[] = "juliao de angola";
+        // char str[] = "Juliao   -   de   -   Angola";  
+        printf("Befor: %s.\n", str);   
+        ft_str_to_title_case(str);
+        printf("After: %s.\n", str);
+        return(0);
+    }
+*/
 
 /*
     ft_str_reverse_words
