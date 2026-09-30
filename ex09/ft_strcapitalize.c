@@ -6,7 +6,7 @@
 /*   By: casa <casa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 16:31:54 by jcongolo          #+#    #+#             */
-/*   Updated: 2026/09/06 20:00:13 by casa             ###   ########.fr       */
+/*   Updated: 2026/09/30 22:04:02 by casa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -278,7 +278,6 @@ char    *ft_calloc_buffer(int len)
     {
         return(NULL);
     }
-    str[0] = '\0';
     return(str);
 }
 /*
@@ -393,11 +392,98 @@ char    *ft_str_to_title_case(char *str)
     }
 */
 
+
+int ft_strlen(char *str)
+{
+    int len;
+    int i;
+
+    i = 0;
+    len = 0;
+    while (str[i])
+    {
+        len++;
+        i++;
+    }
+    return(len);
+}
+void    ft_swap_char(char *a, char *b)
+{
+    char    tmp;
+    
+    tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+void    ft_reverse_word(char *tmp_word)
+{    
+    int i;
+    int len;
+    
+    if (!tmp_word)
+    {
+        return;
+    }
+    len = ft_strlen(tmp_word);
+    if (len < 2)
+    {
+        return;
+    }
+    len--;
+    i = 0;
+    while (i < len)
+    {
+        ft_swap_char(&tmp_word[i], &tmp_word[len]);
+        i++;
+        len--;
+    }
+}
 /*
     ft_str_reverse_words
     Inverter apenas as palavras, mantendo os delimitadores no mesmo lugar.
     Ex.: "Joao-da-Silva" → "oaoJ-ad-avliS"
 */
+char    *ft_str_reverse_words(char *str)
+{
+    //abc def =/ cba fed
+    int     i;
+    int     y;
+    int     len_word;
+    char    *tmp_word;
+    
+    if (!str || str[0] == '\0')
+    {
+        return(NULL);
+    }
+    i = 0;
+    y = 0;
+    while (str[i])
+    {
+        i = ft_skip_delimiters(str, i);
+        if (!str[i])
+        {
+            break;
+        }
+        y = i;
+        len_word = ft_len_word(str, i);
+        tmp_word = ft_calloc_buffer(len_word);
+        ft_extract_word(str, tmp_word, &i);
+        ft_reverse_word(tmp_word);
+        ft_copy_word(tmp_word, str, &y);
+        free(tmp_word);
+    }
+    return(str);
+}
+int main(void)
+{
+    // char    str[30] = "abcdefghijklmnopqrstuvwxyz";
+    char    str[30] = "abc def";
+    printf("Befor: %s.\n", str);   
+    ft_str_reverse_words(str);
+    printf("After: %s.\n", str);
+    return(0);
+}
 
 /*
     ft_str_clean_symbols
