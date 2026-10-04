@@ -6,7 +6,7 @@
 /*   By: casa <casa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 16:31:54 by jcongolo          #+#    #+#             */
-/*   Updated: 2026/09/30 22:04:02 by casa             ###   ########.fr       */
+/*   Updated: 2026/10/04 17:23:56 by casa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -475,20 +475,117 @@ char    *ft_str_reverse_words(char *str)
     }
     return(str);
 }
-int main(void)
-{
-    // char    str[30] = "abcdefghijklmnopqrstuvwxyz";
-    char    str[30] = "abc def";
-    printf("Befor: %s.\n", str);   
-    ft_str_reverse_words(str);
-    printf("After: %s.\n", str);
-    return(0);
-}
+/*
+    int main(void)
+    {
+        // char    str[30] = "abcdefghijklmnopqrstuvwxyz";
+        char    str[30] = "abc def";
+        printf("Befor: %s.\n", str);   
+        ft_str_reverse_words(str);
+        printf("After: %s.\n", str);
+        return(0);
+    }
+*/
 
 /*
     ft_str_clean_symbols
     Remover todos os símbolos não alfanuméricos, mas manter espaços.
     Ex.: "Joao@# Silva!!" → "Joao Silva"
+*/
+int ft_is_alpha_numeric_char(char c)
+{
+    if (!ft_is_alphabet(c) && !ft_is_digit_char(c))
+    {
+        return(0);
+    }
+    return(1);
+}   
+int ft_is_space(char c)
+{
+    if (c != ' ')
+    {
+        return(0);
+    }
+    return(1);
+}
+int ft_count_alpha_num_space(char *str)
+{
+    int i;
+    int len;
+    
+    if (!str || str[0] == '\0')
+    {
+        return(0);
+    }
+    i = 0;
+    len = 0;
+    while (str[i])
+    {
+        if (ft_is_alpha_numeric_char(str[i]) || ft_is_space(str[i]))
+        {
+            len++;
+        }
+        i++;
+    }
+    return(len);
+}
+void    ft_copy_alpha_num_space(char *src, char *dst)
+{
+    int i;
+    int j;
+
+    if (!src || src[0] == '\0')
+    {
+        return;
+    }
+    i = 0;
+    j = 0;
+    while (src[i])
+    {
+        if (ft_is_alpha_numeric_char(src[i]) || ft_is_space(src[i]))
+        {
+            dst[j] = src[i];
+            j++;
+        }
+        i++;
+    }
+    dst[j] = '\0';
+}
+/*
+    ft_str_clean_symbols
+    Remover todos os símbolos não alfanuméricos, mas manter espaços.
+    Ex.: "Joao@# Silva!!" → "Joao Silva"
+*/
+char    *ft_str_clean_symbols(char *str)
+{
+    char    *cpy_str;
+    int     len;
+    
+    if (!str || str[0] == '\0')
+    {
+        return(NULL);
+    }
+    len = ft_count_alpha_num_space(str);
+    cpy_str = ft_calloc_buffer(len);
+    ft_copy_alpha_num_space(str, cpy_str);
+    return(cpy_str);
+}
+/*
+    int main(void)
+    {
+        char    str[50] = "Joao@# Silva!!";
+        // char    *str = "J@ S";
+        char    *clean_str;
+        
+        printf("Befor -> %s.\n", str);
+        clean_str = ft_str_clean_symbols(str);
+        if (clean_str)
+        {
+            printf("After -> %s.\n", clean_str);
+            free(clean_str);
+        }
+        return(0);
+    }
 */
 
 /*
