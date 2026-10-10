@@ -6,7 +6,7 @@
 /*   By: casa <casa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 16:31:54 by jcongolo          #+#    #+#             */
-/*   Updated: 2026/10/04 17:23:56 by casa             ###   ########.fr       */
+/*   Updated: 2026/10/10 22:16:50 by casa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -551,11 +551,6 @@ void    ft_copy_alpha_num_space(char *src, char *dst)
     }
     dst[j] = '\0';
 }
-/*
-    ft_str_clean_symbols
-    Remover todos os símbolos não alfanuméricos, mas manter espaços.
-    Ex.: "Joao@# Silva!!" → "Joao Silva"
-*/
 char    *ft_str_clean_symbols(char *str)
 {
     char    *cpy_str;
@@ -592,6 +587,57 @@ char    *ft_str_clean_symbols(char *str)
     ft_str_count_words
     Contar quantas palavras existem na string (alfanuméricas).
     Ex.: "Joao-123---Silva" → 3
+*/
+int    ft_handle_word(int *in_word)
+{
+    if (*in_word == 0)
+    {
+        *in_word = 1;
+        return(1);
+    }
+    return(0);
+}
+int ft_str_count_words(char *str)
+{
+    int i;
+    int in_word;
+    int count;
+    
+    if (!str || str[0] == '\0')
+    {
+        return(0);
+    }
+    i = 0;
+    in_word = 0;
+    count = 0;
+    while (str[i])
+    {
+        if (!ft_is_delimit(str[i]))
+        {
+            if (ft_handle_word(&in_word))
+            {
+                count++;
+            }
+        }
+        else
+        {
+            in_word = 0;
+        }
+        i++;
+    }
+    return(count);
+}
+/*
+    int main(void)
+    {
+        char    *str = "Joao-123---Silva";
+        int     count_words = 0;
+        
+        printf("=%s=\nBefor -> %d\n", str, count_words);
+        count_words = ft_str_count_words(str);
+        printf("After -> %d\n", count_words);    
+        return(0);
+    }
 */
 
 /*
